@@ -460,6 +460,250 @@ body {
     background-color: var(--color-gold);
 }
 
+/* ===== KOLEKSI MUSEUM (BROWSING) SECTION ===== */
+.koleksi-museum {
+    padding: 5rem 3rem;
+    background-color: #2d3748;
+    min-height: 100vh;
+}
+
+.koleksi-museum-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.koleksi-museum-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Filters */
+.koleksi-museum-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.koleksi-museum-dropdowns {
+    display: flex;
+    gap: 1rem;
+}
+
+.koleksi-filter-select {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    background-color: #e2e8f0;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    color: #4a5568;
+    cursor: pointer;
+    appearance: auto;
+    transition: border-color 0.3s ease;
+}
+
+.koleksi-filter-select:focus {
+    outline: none;
+    border-color: #4299e1;
+}
+
+.koleksi-museum-search {
+    display: flex;
+    gap: 0;
+}
+
+.koleksi-search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    background-color: #e2e8f0;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px 0 0 6px;
+    color: #2d3748;
+    transition: border-color 0.3s ease;
+}
+
+.koleksi-search-input::placeholder {
+    color: #a0aec0;
+}
+
+.koleksi-search-input:focus {
+    outline: none;
+    border-color: #4299e1;
+}
+
+.koleksi-search-btn {
+    padding: 0.75rem 2rem;
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    background-color: #2d3748;
+    color: #fff;
+    border: 1px solid #4a5568;
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.koleksi-search-btn:hover {
+    background-color: #1a202c;
+}
+
+/* Museum Cards Grid */
+.koleksi-museum-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.museum-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.museum-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.museum-card-img-wrap {
+    width: 100%;
+    height: 180px;
+    background-color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0.75rem;
+}
+
+.museum-card-img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.museum-card:hover .museum-card-img-wrap img {
+    transform: scale(1.05);
+}
+
+.museum-card-body {
+    padding: 1rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.museum-card-body h3 {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.museum-card-body h3 a {
+    color: #2b6cb0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.museum-card-body h3 a:hover {
+    color: #2c5282;
+    text-decoration: underline;
+}
+
+.museum-card-body p {
+    font-size: 0.8rem;
+    color: #4a5568;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.museum-card-link {
+    font-size: 0.8rem;
+    color: #2b6cb0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.museum-card-link:hover {
+    color: #2c5282;
+    text-decoration: underline;
+}
+
+/* Pagination */
+.koleksi-museum-pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.pagination-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    color: #63b3ed;
+    background-color: transparent;
+    border: 1px solid #4a5568;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pagination-item:hover {
+    background-color: #4a5568;
+    color: #fff;
+}
+
+.pagination-item.active {
+    background-color: #3182ce;
+    border-color: #3182ce;
+    color: #fff;
+    font-weight: 600;
+}
+
+.pagination-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 36px;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+.pagination-next {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
 /* ===== LOKASI SECTION ===== */
 .lokasi {
     padding: 5rem 3rem;
@@ -581,6 +825,10 @@ body {
     .koleksi-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .koleksi-museum-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -666,10 +914,30 @@ body {
     .counter-section {
         padding: 3rem 1.5rem;
     }
+
+    .koleksi-museum {
+        padding: 4rem 1.5rem;
+    }
+
+    .koleksi-museum-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .koleksi-museum-dropdowns {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 480px) {
     .koleksi-card-img {
         height: 250px;
+    }
+
+    .koleksi-museum-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .museum-card-img-wrap {
+        height: 200px;
     }
 }

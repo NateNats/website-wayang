@@ -91,7 +91,7 @@
     <section class="koleksi" id="koleksi">
         <div class="koleksi-header reveal">
             <h2>Koleksi Wayang</h2>
-            <a href="#" class="koleksi-more">
+            <a href="{{ route('koleksi.index') }}" class="koleksi-more">
                 Lihat selengkapnya
                 <span class="koleksi-more-arrow">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -101,32 +101,8 @@
             </a>
         </div>
 
-        <div class="koleksi-grid reveal">
-            <div class="koleksi-card">
-                <img src="{{ asset('images/wayang-1.png') }}" alt="Wayang 1" class="koleksi-card-img">
-                <div class="koleksi-card-footer">
-                    <h3>Wayang 1</h3>
-                </div>
-            </div>
-            <div class="koleksi-card">
-                <img src="{{ asset('images/wayang-2.png') }}" alt="Wayang 2" class="koleksi-card-img">
-                <div class="koleksi-card-footer">
-                    <h3>Wayang 2</h3>
-                </div>
-            </div>
-            <div class="koleksi-card">
-                <img src="{{ asset('images/wayang-3.png') }}" alt="Wayang 3" class="koleksi-card-img">
-                <div class="koleksi-card-footer">
-                    <h3>Wayang 3</h3>
-                </div>
-            </div>
-        </div>
+        <div class="koleksi-wayang">
 
-        <div class="carousel-dots reveal">
-            <button class="carousel-dot active" aria-label="Page 1"></button>
-            <button class="carousel-dot" aria-label="Page 2"></button>
-            <button class="carousel-dot" aria-label="Page 3"></button>
-            <button class="carousel-dot" aria-label="Page 4"></button>
         </div>
     </section>
 
