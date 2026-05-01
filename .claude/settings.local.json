@@ -2,6 +2,5 @@
   "permissions": {
     "allow": [
       "Bash(php artisan *)"
-    ]
   }
 }
