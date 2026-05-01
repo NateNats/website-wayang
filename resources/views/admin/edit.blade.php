@@ -8,7 +8,7 @@
     </div>
 
     <div class="form-card">
-        <form action="{{ route('dashboard.koleksi.update', $koleksi) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.update', $koleksi) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -24,7 +24,7 @@
                 <label for="jenis">Jenis</label>
                 <select name="jenis" id="jenis" required>
                     <option value="">Pilih Jenis</option>
-                    @foreach(['Arca', 'Prasasti', 'Perhiasan', 'Keramik', 'Alat', 'Lainnya'] as $j)
+                    @foreach(['Solo', 'Yogyakarta', 'Lainnya'] as $j)
                         <option value="{{ $j }}" {{ old('jenis', $koleksi->jenis) == $j ? 'selected' : '' }}>{{ $j }}</option>
                     @endforeach
                 </select>
@@ -60,7 +60,9 @@
                     <img src="{{ asset('storage/' . $koleksi->gambar) }}" alt="{{ $koleksi->nama }}" class="current-img">
                     <small style="color:#64748b;display:block;margin-bottom:0.5rem;">Upload gambar baru untuk mengganti</small>
                 @endif
-                <input type="file" name="gambar" id="gambar" accept="image/*">
+                <input type="file" name="gambar" id="gambar" accept="image/*" style="display: none;" onchange="updateFileName()">
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('gambar').click()">Pilih Gambar</button>
+                <span id="file-name" style="margin-left: 10px; color: #64748b;"></span>
                 @error('gambar')
                     <div class="error-text">{{ $message }}</div>
                 @enderror
@@ -68,8 +70,20 @@
 
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                <a href="{{ route('dashboard.koleksi.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('admin.index') }}" class="btn btn-secondary">Batal</a>
             </div>
         </form>
     </div>
 @endsection
+
+<script>
+function updateFileName() {
+    const input = document.getElementById('gambar');
+    const fileNameSpan = document.getElementById('file-name');
+    if (input.files.length > 0) {
+        fileNameSpan.textContent = input.files[0].name;
+    } else {
+        fileNameSpan.textContent = '';
+    }
+}
+</script>
