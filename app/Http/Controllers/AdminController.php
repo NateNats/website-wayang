@@ -6,17 +6,18 @@ use App\Models\Koleksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class DashboardKoleksiController extends Controller
+class AdminController extends Controller
 {
+
     public function index()
     {
         $koleksis = Koleksi::latest()->paginate(10);
-        return view('dashboard.koleksi.index', compact('koleksis'));
+        return view('admin.index', compact('koleksis'));
     }
 
     public function create()
     {
-        return view('dashboard.koleksi.create');
+        return view('admin.create');
     }
 
     public function store(Request $request)
@@ -35,13 +36,13 @@ class DashboardKoleksiController extends Controller
 
         Koleksi::create($validated);
 
-        return redirect()->route('dashboard.koleksi.index')
+        return redirect()->route('admin.index')
             ->with('success', 'Koleksi berhasil ditambahkan!');
     }
 
     public function edit(Koleksi $koleksi)
     {
-        return view('dashboard.koleksi.edit', compact('koleksi'));
+        return view('admin.edit', compact('koleksi'));
     }
 
     public function update(Request $request, Koleksi $koleksi)
@@ -64,7 +65,7 @@ class DashboardKoleksiController extends Controller
 
         $koleksi->update($validated);
 
-        return redirect()->route('dashboard.koleksi.index')
+        return redirect()->route('admin.index')
             ->with('success', 'Koleksi berhasil diperbarui!');
     }
 
@@ -76,7 +77,7 @@ class DashboardKoleksiController extends Controller
 
         $koleksi->delete();
 
-        return redirect()->route('dashboard.koleksi.index')
+        return redirect()->route('admin.index')
             ->with('success', 'Koleksi berhasil dihapus!');
     }
 }
