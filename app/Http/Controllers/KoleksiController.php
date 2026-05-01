@@ -32,6 +32,6 @@ class KoleksiController extends Controller
         $jenisList = Koleksi::distinct()->pluck('jenis')->filter()->sort()->values();
         $bahanList = Koleksi::distinct()->pluck('bahan')->filter()->sort()->values();
 
-        return view('koleksi.wayang', compact('koleksis', 'jenisList', 'bahanList'));
+        return view('core.wayang', compact('koleksis', 'jenisList', 'bahanList'));
     }
 }

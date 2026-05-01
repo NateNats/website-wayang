@@ -27,9 +27,9 @@
 
         <ul class="navbar-links" id="navLinks">
             <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#tentang">Kegiatan</a></li>
-            <li><a href="#koleksi">Koleksi</a></li>
-            <li><a href="#tentang">Tentang kami</a></li>
+            <li><a href="{{ route('kegiatan.index') }}">Kegiatan</a></li>
+            <li><a href="{{ route('koleksi.index') }}">Koleksi</a></li>
+            <li><a href="{{ route('about.index') }}">Tentang kami</a></li>
             <li><a href="#lokasi">Kontak</a></li>
         </ul>
     </nav>
@@ -100,7 +100,6 @@
                 </span>
             </a>
         </div>
-
         <div class="koleksi-wayang">
 
         </div>
