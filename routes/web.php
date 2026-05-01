@@ -11,8 +11,8 @@ Route::get('/', function () {
 // Public koleksi page
 Route::get('/koleksi', [KoleksiController::class, 'index'])->name('koleksi.index');
 
-// Dashboard routes
-Route::get('/dashboard', function () {
+// Admin dashboard 
+Route::get('/admin/dashboard', function () {
     return redirect()->route('dashboard.koleksi.index');
 });
 
