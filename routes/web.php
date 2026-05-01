@@ -2,14 +2,21 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KoleksiController;
+use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\CoreController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CoreController::class, 'index'])->name('welcome');
 
 // Public koleksi page
 Route::get('/koleksi', [KoleksiController::class, 'index'])->name('koleksi.index');
+
+// kegiatan page
+Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
+
+// about page
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 
 // Admin dashboard 
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index');
