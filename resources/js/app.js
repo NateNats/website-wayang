@@ -1,37 +1,5 @@
 import './bootstrap';
 
-// ===== NAVBAR SCROLL EFFECT =====
-const navbar = document.getElementById('navbar');
-
-function handleNavbarScroll() {
-    if (window.scrollY > 80) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-}
-
-window.addEventListener('scroll', handleNavbarScroll);
-
-// ===== MOBILE MENU TOGGLE =====
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('open');
-    });
-
-    // Close menu when a link is clicked
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('open');
-        });
-    });
-}
-
 // ===== SCROLL REVEAL ANIMATION =====
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.reveal');

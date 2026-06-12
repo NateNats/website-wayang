@@ -34,4 +34,15 @@ class KoleksiController extends Controller
 
         return view('core.wayang', compact('koleksis', 'jenisList', 'bahanList'));
     }
+
+    public function show(Koleksi $koleksi)
+    {
+        $related = Koleksi::where('jenis', $koleksi->jenis)
+            ->where('id', '!=', $koleksi->id)
+            ->inRandomOrder()
+            ->limit(3)
+            ->get();
+
+        return view('core.wayang-detail', compact('koleksi', 'related'));
+    }
 }

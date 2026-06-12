@@ -12,27 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('assets/museum.css') }}">
 </head>
 <body>
 
-    {{-- ===== NAVBAR ===== --}}
-    <nav class="navbar" id="navbar">
-        <a href="#" class="navbar-logo">wayang</a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <ul class="navbar-links" id="navLinks">
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="{{ route('kegiatan.index') }}">Kegiatan</a></li>
-            <li><a href="{{ route('koleksi.index') }}">Koleksi</a></li>
-            <li><a href="{{ route('about.index') }}">Tentang kami</a></li>
-            <li><a href="#lokasi">Kontak</a></li>
-        </ul>
-    </nav>
+    @include('partials.museum-nav')
 
     {{-- ===== HERO SECTION ===== --}}
     <section class="hero" id="beranda">
